@@ -3,6 +3,10 @@ class PortfoliosController < ApplicationController
   def index
     @portfolio_items = Portfolio.all
   end
+  
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
 
   def new
     @portfolio_item = Portfolio.new
@@ -20,6 +24,7 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  
   def edit
     @portfolio_item = Portfolio.find(params[:id])
   end
